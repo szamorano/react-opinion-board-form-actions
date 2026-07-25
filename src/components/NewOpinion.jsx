@@ -1,5 +1,7 @@
+import { useActionState } from "react";
+
 export function NewOpinion() {
-  function shareOpinionAction(formData) {
+  function shareOpinionAction(prevState, formData) {
     const body = formData.get("body");
     const userName = formData.get("userName");
 
@@ -33,10 +35,14 @@ export function NewOpinion() {
     return { errors: null };
   }
 
+  const [formState, formAction] = useActionState(shareOpinionAction, {
+    errors: null,
+  });
+
   return (
     <div id="new-opinion">
       <h2>Share your opinion!</h2>
-      <form action={shareOpinionAction}>
+      <form action={formAction}>
         <div className="control-row">
           <p className="control">
             <label htmlFor="userName">Your Name</label>
@@ -52,6 +58,14 @@ export function NewOpinion() {
           <label htmlFor="body">Your Opinion</label>
           <textarea id="body" name="body" rows={5}></textarea>
         </p>
+
+        {formState.errors && (
+          <ul className="errors">
+            {formState.errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )}
 
         <p className="actions">
           <button type="submit">Submit</button>
