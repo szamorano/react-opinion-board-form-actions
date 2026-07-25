@@ -2,14 +2,14 @@
   "opinions": [
     {
       "id": 1785010374598,
-      "votes": 0,
+      "votes": 2,
       "userName": "Steve",
       "title": "Form Actions are new!",
       "body": "A new feature added by React 19."
     },
     {
       "id": 1785009412786,
-      "votes": 0,
+      "votes": -3,
       "userName": "Steve",
       "title": "React is great!",
       "body": "I really like it alot - everyone should learn it!"
@@ -19,14 +19,14 @@
       "userName": "Maximilian Schwarzmüller",
       "title": "Do yourself a favor and learn React!",
       "body": "React is an amazing JavaScript library!\n\nDespite all it's shortcomings.",
-      "votes": 0
+      "votes": 1
     },
     {
       "id": 2,
       "userName": "Maximilian Schwarzmüller",
       "title": "React has more depth than you might first think!",
       "body": "React is a great library to learn, but it's not just about the basics. Dive deeper!\nFor example with this course!",
-      "votes": 0
+      "votes": -1
     }
   ]
 }
